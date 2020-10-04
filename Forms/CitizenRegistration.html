@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Citizen Registration</h1>
+	
+	<form method="post">
+		Full Name:<input type="text" name="citFullName" id="citFullName"><br><br>
+		
+		DateOfBirth:<input type="date" name="citDob" id="citDob"> <br><br>
+		
+		Gender:<input type="radio" name="citGender" id="citGender">
+				<label for="Male"> Male</label>
+				<input type="radio" name="citGender" id="citGender">
+				<label for="Female"> Female</label><br><br>
+		
+		Email:<input type="email" name="citEmail" id="citEmail"><br><br>
+		
+		PhoneNo:<input type="text" name="citPhone" id="citPhone"><br><br>
+		
+		Address:<input type="text" name="citAddress" id="citAddress"><br><br>
+		
+		Income Group:<select name="citIncomeGroup" id="citIncomeGroup">
+		  <option value="LessThan 250000">LessThan 250000</option>
+		  <option value="LessThan 500000">LessThan 500000</option>
+		  <option value="LessThan 1000000">LessThan 1000000</option>
+		  <option value="MoreThan 1000000">MoreThan 1000000</option>
+		</select><br><br>
+		
+		Profession:<select name="citProfession" id="citProfession">
+		  <option value="Farmer">Farmer</option>
+		  <option value="GovtEmployee">GovtEmployee</option>
+		  <option value="PrivateSector">PrivateSector</option>
+		  <option value="PublicSector">PublicSector</option>
+		  <option value="Unemployed">Unemployed</option>
+		  <option value="Retired">Retired</option>
+		</select><br><br>
+		
+		Aadhar number:<input type="text" name="citAadhar" id="citAadhar" ><br><br>
+		
+		Pan Number:<input type="text" name="citPanNumber" id="citPanNumber"><br><br>
+		
+		UserName:<input type="text" name="citUsername" id="citUsername"><br><br>
+		
+		Password:<input type="password" name="citPassword" id="citPassword"><br><br>
+		
+		Confirm Password:<input type="password" name="citConfirmPassword" id="citConfirmPassword"><br><br>
+		<input type="submit" name="submit" id="submit"> 
+	</form>
+
+</body>
+</html>
