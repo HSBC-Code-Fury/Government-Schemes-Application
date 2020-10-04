@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form method="post" action="">
+
+<h3>Add Scheme</h3>
+<label>Name:</label> <input type="text" name="addName" id="name"><br><br>
+<label>Summary :</label><input type="text" name="addSummary" id="summary"><br><br>
+<label>Description :</label><textarea id="desc" name="addDesc" rows="4" cols="50"></textarea><br><br>
+<label>Image :</label><input type="file" id="img" name="img" accept="image/*"><br><br>
+<label>Ministry :</label>
+<select name="addMinistry" id="ministry">
+    <option value="finance">Ministry of Finance</option>
+    <option value="education">Ministry of Education</option>
+    <option value="panchayati">Ministry of Panchayati Raj</option>
+    <option value="tribal">Ministry of Tribal Affairs</option>
+    <option value="wc">Ministry of Women and Child Development</option>
+  </select><br><br>
+<label>Sector :</label>
+<select name="addSector" id="sector" placeholder="Enter Sector Here">
+<option value="pension">Pension</option>
+    <option value="highEdu">University and Higher Education; Minorities Education</option>
+    <option value="techEdu">Technical Education</option>
+    <option value="finService">Financial Services</option>
+    <option value="revenue">Revenue</option>
+    <option value="passmanage">Investment and Public Asset Management</option>
+    <option value="ePanchayat">E-PANCHAYAT</option>
+    <option value="ncst">National Commission for Scheduled Tribes</option>
+    <option value="hstfdc">National Scheduled Tribes Finance and Development Corporation </option>
+    <option value="trifed">Tribal Co-operative Marketing Federation of India</option>
+    <option value="nipccd">National Institute of Public Cooperation and Child Development</option>
+    <option value="ncw">National Commission for Women </option>
+    <option value="ncpcr">National Commission for Protection of Child Rights </option>
+  </select><br><br>
+
+
+<label>Start Date :</label><input type="date" id="start" name="startDate"><br><br>
+<label>Eligibility Criteria :</label>
+<input type="text" name="minAge" id="minAge" placeholder="Enter min age">
+<input type="text" name="maxAge" id="maxAge" placeholder="Enter max age">
+<select name="addProf" id="prof">
+    <option value="farmer">Farmer</option>
+    <option value="govtEmp">Govt Employee</option>
+    <option value="priSec">Private Sector</option>
+    <option value="pubSec">Public Sector</option>
+    <option value="unEmp">Unemployed</option>
+    <option value="retd">Retired</option>
+  </select>
+
+<select name="incGrp" id="inc">
+    <option value="bpl">BPL</option>
+    <option value="lower">Lower</option>
+    <option value="middle">Middle</option>
+  </select>
+  
+  <select name="gender" id="gend">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+<br><br>
+<label>Documents Required :</label><br>
+<input type="checkbox" id="aadhar" name="aadharCard" value="aadhar"><label> Aadhar Card</label><br>
+<input type="checkbox" id="pan" name="panCard" value="pan"><label >Pan Card</label><br>
+<input type="checkbox" id="voter" name="voterId" value="voter">Voter Id<label></label><br>
+<input type="checkbox" id="resd" name="resdProof" value="resd"><label>Residential  Proof</label><br>
+ <br><br>
+<label>Payments Bank :</label>
+<select name="payBank" id="bank">
+	<option value="sbi">State Bank of India</option>
+    <option value="cbi">Central Bank of India</option>
+    <option value="ubi">Union Bank of India</option>
+  </select><br><br><br><br>
+
+<input type="submit" value="Add Scheme">
+
+
+
+
+
+</form>
+
+</body>
+</html>
