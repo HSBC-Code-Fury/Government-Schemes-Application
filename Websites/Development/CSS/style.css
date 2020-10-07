@@ -1,0 +1,262 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin: 0 auto;
+	padding: 0;
+	border: white;
+}
+
+.container{
+	width:1308px;
+	height:2200px;
+}
+
+.black{
+	background-color: #191919;
+	width: 1308px;
+	height: auto;
+	background: url(../images/background/hero.jpg) no-repeat bottom;
+}
+.black h1{
+	font-family: Arial Black;
+	font-size: 110px;
+	font-weight: normal;
+	text-align: left;
+	color: white;
+	padding-left: 10px;
+	padding-top: 162px;
+	padding-bottom: 52px;
+}
+
+.black .line{
+	width: 165px;
+	height: 3px;
+	background-color: #da491c;
+	background-position: left;
+	margin-left: 400px;
+	
+}
+
+.black p{
+	font-family: Times New Roman;
+	font-size: 18px;
+	font-weight: normal;
+	color: white;
+	text-align: left;
+	padding-top: 55px;
+	padding-bottom: 233px;
+	padding-left: 250px;
+}
+
+
+.white{
+	width: 1155px;
+	height: auto;
+	padding: 93px 80px 122px 70px;
+	border: 1px solid black;
+}
+.white h2{
+	font-family: sans-serif;
+	font-size: 36px;
+	font-weight: normal;
+	text-transform: uppercase;
+	
+}
+.white p{
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #494949;
+	padding-top: 36px;
+	padding-bottom: 82px;
+}
+.white .li{
+	width: 113px;
+	height: 1px;
+	background-color: #da491c;
+	margin: 0px;
+	
+}
+.white ul{
+	list-style: none;
+	padding-top: 33px;
+	}
+	
+.white ul li{
+	display: inline-block;
+	width: 334px;
+	padding-right: 20px;
+	vertical-align: 5px;
+}
+.white ul li img{
+	padding-bottom: 25px;
+	vertical-align: 2px;
+}
+.white .responsive{
+	background-image: url(../images/background/responsive.png);
+	background-repeat: no-repeat;
+	
+}
+.white .semantic{
+	background-image: url(../images/background/semantic.png);
+	background-repeat: no-repeat;
+}
+.white .custom {
+	background-image: url(../images/background/custom.png);
+	background-repeat: no-repeat;
+}
+.white .ecommerce{
+	background-image: url(../images/background/ecommerce.png);
+	background-repeat: no-repeat;
+}
+.white .cross{
+	background-image: url(../images/background/cross.png);
+	background-repeat: no-repeat;
+}
+.white .web{
+	background-image: url(../images/background/web.png);
+	background-repeat: no-repeat;
+}
+.white ul li h3{
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-size: 26px;
+	font-weight: normal;
+    padding-bottom: 30px;
+	}
+.white ul li p{
+	width: 350px;
+	font-family: sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #646464;
+	padding: 0;
+	padding-bottom: 45px;
+}
+
+.darkg{
+	width: 1241px;
+	height: 430px;
+	background-color: #262626;
+	padding-left: 67px;
+}
+.darkg h3{
+	font-family: sans-serif;
+	font-size: 26px;
+	font-weight: normal;
+	color: white;
+	text-transform: uppercase;
+	padding: 106px 0px 40px 0px;
+	
+}
+.darkg p{
+	width: 780px;
+	height: 50px;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: white;
+	margin: 0px;
+	padding-bottom: 76px;
+}
+.darkg a{
+	text-decoration: none;
+	color: white;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	border: 1px solid white;
+	padding: 29px 62px 31px 70px;
+	}
+
+.lightgray{
+	width: 1241px;
+	background-color: #333333;
+	padding: 80px 0px 0px 67px;
+}
+
+.lightgray .left{
+	width: 748px;
+	height: 109px;
+	margin: 0px;
+	display: inline-block;
+	}
+
+.nav{
+	padding-bottom: 20px;
+}
+
+.lightgray .left .nav ul li a{
+	text-decoration: none;
+	color: #e0e0e0;
+	}
+
+.lightgray ul{
+	list-style: none;
+}
+
+.lightgray .left .nav ul li{
+	display: inline;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	padding-right: 15px;
+}
+.lightgray input[type="email"]{
+	width: 748px;
+	height: 80px;
+	background-color: #333333;
+	font-family: sans-serif;
+	font-size: 45px;
+	font-weight: normal;
+	border-bottom: solid 1px #929292;
+	}
+
+.lightgray .left p{
+	padding-top: 20px;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: normal;
+	color: #999999;
+}
+
+.lightgray .right{
+	width: 276px;
+	height: 79px;
+	display: inline-block;
+	float: right;
+	margin-right: 95px;
+	}
+
+
+.lightgray .right h3{
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-size: 26px;
+	font-weight: normal;
+	color: white;
+	padding-bottom: 14px;
+}
+
+.lightgray .right p{
+	color: white;
+	font-family: sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding-bottom: 25px;
+	line-height: 30px;
+}
+
+.lightgray .footer{
+	font-family: sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #606060;
+	margin-top: 63px;
+	padding-bottom: 46px;
+}
+
+
+	
