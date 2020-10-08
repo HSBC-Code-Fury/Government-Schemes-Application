@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Home page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+  
+</head>
+<body>
+ 
+  <div class="sidebar">
+
+    <a href="citizenregister.html" class="active">Citizen Register</a><hr>
+    <a href="citizenlogin.html"> Citizen Login</a><hr>
+    <a href="employeelogin.html"> Employee Login</a><hr>
+  </div>
+
+      <div class="topnav" >
+        <div class="topnav-left">
+            <a href="Logo" >Logo</a>
+        </div>
+        <a href="Home.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="help.html">Help</a>
+      </div>
+   
+   
+      <div class="headName">
+        <h2>Registration of Citizen</h2>
+      </div>
+
+ 
+      <div class="main">
+        <form method="post" action="" class="formClass">
+          <label class="labelClass">Full Name:</label><input type="text" name="citFullName" id="citFullName"><br><br>
+      
+          <label class="labelClass">DateOfBirth:</label><input type="date" name="citDob" id="citDob"> <br><br>
+      
+          <label class="labelClass">Gender</label>
+              <input type="radio" name="citGender" id="citGender">
+              <label for="Male"> Male</label>
+              <input type="radio" name="citGender" id="citGender">
+              <label for="Female"> Female</label><br><br>
+      
+          <label class="labelClass">Email:</label><input type="email" name="citEmail" id="citEmail"><br><br>
+      
+          <label class="labelClass">PhoneNo:</label><input type="text" name="citPhone" id="citPhone"><br><br>
+      
+          <label class="labelClass">Address:</label><input type="text" name="citAddress" id="citAddress"><br><br>
+      
+          <label class="labelClass">Income Group:</label>
+            <select name="citIncomeGroup" id="citIncomeGroup">
+            <option value="LessThan 250000">LessThan 250000</option>
+            <option value="LessThan 500000">LessThan 500000</option>
+            <option value="LessThan 1000000">LessThan 1000000</option>
+            <option value="MoreThan 1000000">MoreThan 1000000</option>
+          </select><br><br>
+      
+          <label class="labelClass">Profession:</label><select name="citProfession" id="citProfession">
+            <option value="Farmer">Farmer</option>
+            <option value="GovtEmployee">GovtEmployee</option>
+            <option value="PrivateSector">PrivateSector</option>
+            <option value="PublicSector">PublicSector</option>
+            <option value="Unemployed">Unemployed</option>
+            <option value="Retired">Retired</option>
+          </select><br><br>
+      
+          <label class="labelClass">Aadhar number:</label><input type="text" name="citAadhar" id="citAadhar" ><br><br>
+      
+          <label class="labelClass">Pan Number:</label><input type="text" name="citPanNumber" id="citPanNumber"><br><br>
+      
+          <label class="labelClass">UserName:</label><input type="text" name="citUsername" id="citUsername"><br><br>
+      
+          <label class="labelClass">Password:</label><input type="password" name="citPassword" id="citPassword"><br><br>
+      
+          <label class="labelClass">Confirm Password:</label><input type="password" name="citConfirmPassword" id="citConfirmPassword"><br><br>
+          <input type="submit" class="button1" name="submit" id="submit"> 
+        </form>
+      
+          
+      
+      </div>
+
+      <footer>
+        <p>This site is developed by HSBC<br>
+        <a href="mailto:hege@example.com">hsbc.co.in</a></p>
+      </footer> 
+
+</body>
+
+</html>
