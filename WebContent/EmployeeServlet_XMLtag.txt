@@ -1,0 +1,8 @@
+<servlet>
+  	<servlet-name>Employee</servlet-name>
+  	<servlet-class>com.hsbc.controller.EmployeeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  	<servlet-name>Employee</servlet-name>
+  	<url-pattern>/employee</url-pattern>
+</servlet-mapping>
