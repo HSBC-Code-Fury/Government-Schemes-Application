@@ -1,12 +1,10 @@
-package com.hsbc.dao;
-
-import java.util.Date;
+package com.hsbc;
 
 public class Citizen {
 	
 	String uniqueId;
 	String name;
-	Date dob;
+	String dob;
 	String gender;
 	String email;
 	String phone;
@@ -16,12 +14,12 @@ public class Citizen {
 	String aadhar;
 	String pan;
 	
-	public Citizen(String uniqueId, String name, Date dob, String gender, String email, String phone, String address,
+	public Citizen(String uniqueId, String name, String dateOfBirth, String gender, String email, String phone, String address,
 			String incomeGroup, String profession, String aadhar, String pan) {
 		super();
 		this.uniqueId = uniqueId;
 		this.name = name;
-		this.dob = dob;
+		this.dob = dateOfBirth;
 		this.gender = gender;
 		this.email = email;
 		this.phone = phone;
@@ -44,10 +42,10 @@ public class Citizen {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDob() {
+	public String getDob() {
 		return dob;
 	}
-	public void setDob(Date dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 	public String getGender() {
