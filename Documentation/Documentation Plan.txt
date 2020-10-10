@@ -1,0 +1,19 @@
+POINTS TO BE INCLUDED INTO THE DOCUMENTATION
+
+1.
+    - Project Methodology/Approach
+2.
+    - Class Diagram/ER Diagram/DB Diagram
+    - Data flow explaination
+3.
+     - Work Plan
+4.
+      - Assumptions of the project
+      - Project Scope
+5.
+      - Test Documentation (Use case testing) 
+6.
+       -Lessons learned
+       - Encountered Problems & Solutions
+7.
+      - References
