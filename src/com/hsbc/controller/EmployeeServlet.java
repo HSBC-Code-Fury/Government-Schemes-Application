@@ -26,6 +26,7 @@ import javax.servlet.http.HttpSession;
 
 import com.hsbc.governmentschemes.dao.EmployeeDaoImpl;
 import com.hsbc.governmentschemes.model.Scheme;
+import com.hsbc.governmentschemes.model.SchemeCriteria;
 
 import java.util.Date;
 import java.util.List;
@@ -46,9 +47,11 @@ public class EmployeeServlet extends HttpServlet{
 		String password = req.getParameter("pass");
 		int valid = dao.validateEmployeeDetails(username, password);
 		if(valid==1) {
-			List<Scheme> s = dao.displayAllSchemes();
-			req.setAttribute("schemeList", s);
 			HttpSession session2 = req.getSession();
+			List<Scheme> s = dao.displayAllSchemes();
+			List<SchemeCriteria> sc = dao.displayAllSchemesCriteria();
+			session2.setAttribute("schemeList", s);
+			session2.setAttribute("schemeCriteriaList", sc);
 			session2.setAttribute("empid", username);
 			RequestDispatcher rd = req.getRequestDispatcher("ShowSchemes.jsp");
 			rd.forward(req, resp);
@@ -61,8 +64,8 @@ public class EmployeeServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession session=null;
-		if(session.getAttribute("empid")==null) {
+
+		if(req.getAttribute("empid")==null) {
 			resp.sendRedirect("employeelogin.html");
 		}
 		resp.setContentType("text/html");
@@ -78,6 +81,16 @@ public class EmployeeServlet extends HttpServlet{
 			String date = req.getParameter("startDate");
 			String status = req.getParameter("status");
 			String paymentBanks = req.getParameter("paymentBanks");
+			int minAge = Integer.parseInt(req.getParameter("minAge"));
+			int maxAge = Integer.parseInt(req.getParameter("maxAge"));
+			String profession = req.getParameter("profession");
+			String incomeGroup = req.getParameter("incomeGroup");
+			String gender = req.getParameter("gender");
+			String[] doc = req.getParameterValues("documents");
+			String documents="";
+			for(String a: doc) {
+				documents=documents+" "+a+" ";
+			}
 			Date convDate=null;
 			try {
 				 convDate = new SimpleDateFormat("yyyy-MM-dd").parse(date);
@@ -86,8 +99,10 @@ public class EmployeeServlet extends HttpServlet{
 				e.printStackTrace();
 			}
 			dao.editScheme(new Scheme(uniqueId, name, summary, description, ministry, sector, convDate, status, paymentBanks));
+			dao.editSchemeCriteria(new SchemeCriteria(uniqueId, profession, incomeGroup, gender, documents, minAge, maxAge));
+			RequestDispatcher rd = req.getRequestDispatcher("ShowSchemes.jsp");
+			rd.forward(req, resp);
 		}
-		
 		
 		String uniqueId =req.getParameter("uniqueId");
 		String name =req.getParameter("name");
@@ -98,6 +113,16 @@ public class EmployeeServlet extends HttpServlet{
 		String date = req.getParameter("startDate");
 		String status = req.getParameter("status");
 		String paymentBanks = req.getParameter("paymentBanks");
+		int minAge = Integer.parseInt(req.getParameter("minAge"));
+		int maxAge = Integer.parseInt(req.getParameter("maxAge"));
+		String profession = req.getParameter("profession");
+		String incomeGroup = req.getParameter("incomeGroup");
+		String gender = req.getParameter("gender");
+		String[] doc = req.getParameterValues("documents");
+		String documents="";
+		for(String a: doc) {
+			documents=documents+" "+a+" ";
+		}
 		Date convDate=null;
 		try {
 			 convDate = new SimpleDateFormat("yyyy-MM-dd").parse(date);
@@ -106,18 +131,20 @@ public class EmployeeServlet extends HttpServlet{
 			e.printStackTrace();
 		}
 		dao.addScheme(new Scheme(uniqueId, name, summary, description, ministry, sector, convDate, status, paymentBanks));
+		dao.addSchemeCriteria(new SchemeCriteria(uniqueId, profession, incomeGroup, gender, documents, minAge, maxAge));
 		RequestDispatcher rd = req.getRequestDispatcher("ShowSchemes.jsp");
 		rd.forward(req, resp);
 	}
 
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession session=null;
-		if(session.getAttribute("empid")==null) {
+		if(req.getAttribute("empid")==null) {
 			resp.sendRedirect("employeelogin.html");
 		}
 		EmployeeDaoImpl dao = new EmployeeDaoImpl();
 		String id = req.getParameter("uniqueId");
+		dao.deleteScheme(id);
+		dao.deleteSchemeCriteria(id);
 		RequestDispatcher rd = req.getRequestDispatcher("ShowSchemes.jsp");
 		rd.forward(req, resp);
 	}
