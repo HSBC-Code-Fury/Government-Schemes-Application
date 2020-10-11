@@ -7,6 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 </head>
 <%
 if(session.getAttribute("empid")==null) {
@@ -14,6 +15,21 @@ if(session.getAttribute("empid")==null) {
 }
 %>
 <body>
+<div class="sidebar">
+		<a href="addScheme.jsp">Add Schemes</a>
+		<hr>
+		<a href="ShowSchemes.jsp" class="active"> View Schemes</a>
+		<hr>
+	</div>
+
+	<div class="topnav">
+		<div class="topnav-left">
+			<a href="Logo">Logo</a>
+		</div>
+
+		<a href="EmployeeHome.jsp">Home</a> 
+
+	</div>
 	<form action="LOGOUT">
 		<input type="button" value="LOGOUT">
 	</form>
@@ -27,7 +43,22 @@ if(session.getAttribute("empid")==null) {
 	Start Date: <input type="text" name="startDate">
 	Status: <input type="text" name="status">
 	Payment Banks: <input type="text" name="paymentBanks">
+	Eligibility criteria: <input type="text" name="minAge">
+	                      <input type="text" name="maxAge">
+	                      <input type="text" name="profession">
+	                      <input type="text" name="incomemGroup">
+	                      <input type="text" name="gender">
+	Documents required: <input type="checkbox" id="adhaar" name="documents" >Adhaar Card
+				 		<input type="checkbox" id="pan" name="documents">Pan Card
+				  		<input type="checkbox" id="voterId" name="documents">Voter Id
+				  		<input type="checkbox" id="residentialProof" name="documents">Residential Proof
 	<input type="submit" value="Add Scheme" >
 	</form>
+	<footer>
+		<p>
+			This site is developed by HSBC<br> <a
+				href="mailto:hege@example.com">hsbc.co.in</a>
+		</p>
+	</footer>
 </body>
 </html>
