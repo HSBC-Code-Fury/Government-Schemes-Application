@@ -10,7 +10,8 @@
 if(session.getAttribute("empid")==null) {
 	response.sendRedirect("employeelogin.html");
 }
-request.getAttribute("schemeList"); %>
+session.getAttribute("schemeList");
+session.getAttribute("schemeCriteriaList");%>
 
 <form action="LOGOUT">
 		<input type="button" value="LOGOUT">
@@ -32,8 +33,8 @@ request.getAttribute("schemeList"); %>
 		<th>${s.ministry}</th>
 		<th>${s.status}</th>
 		<th>${s.date}</th>
-		<th><a href="editScheme.jsp?id=${s.uniqueId}">update</a></th>
-		<th><a href="EmployeeLogin?action=DELETE&id=${s.uniqueId}">DELETE</a></th>
+		<th><a href="editScheme.jsp/id=${s.uniqueId}&empid=${empid}">update</a></th>
+		<th><a href="EmployeeServlet/action=DELETE&id=${s.uniqueId}&empid=${empid}">DELETE</a></th>
 	</tr>
 	</c:forEach>
 	
