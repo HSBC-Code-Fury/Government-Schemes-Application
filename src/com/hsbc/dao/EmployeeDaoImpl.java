@@ -35,6 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.hsbc.governmentschemes.model.Scheme;
+import com.hsbc.governmentschemes.model.SchemeCriteria;
 
 public class EmployeeDaoImpl implements EmployeeDaoIntf{
 	
@@ -78,7 +79,6 @@ public class EmployeeDaoImpl implements EmployeeDaoIntf{
 			pstmt.setString(4, s.getDescription());
 			pstmt.setString(5, s.getMinistry());
 			pstmt.setString(6, s.getSector());
-			Date d = (Date) s.getStartDate();
 			pstmt.setDate(7,  (Date) s.getStartDate());
 			pstmt.setString(8, s.getStatus());
 			pstmt.setString(9, s.getPaymentBanks());
@@ -107,10 +107,9 @@ public class EmployeeDaoImpl implements EmployeeDaoIntf{
 	public List<Scheme> displayAllSchemes() {
 		List<Scheme> slist = new ArrayList<>();
 		try {
-			int c = 0;
 			String str = "select * from schemes ";
-			PreparedStatement pst = conn.prepareStatement(str);
-			ResultSet rs = pst.executeQuery();
+			Statement pst = conn.createStatement();
+			ResultSet rs = pst.executeQuery(str);
 
 			//String uniqueId,name,summary,description,ministry,sector,status,paymentBanks;
 			//private Date startDate;
@@ -131,7 +130,7 @@ public class EmployeeDaoImpl implements EmployeeDaoIntf{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return slist;
 	}
 
 	@Override
@@ -165,7 +164,7 @@ public class EmployeeDaoImpl implements EmployeeDaoIntf{
 
 	@Override
 	public void editScheme(Scheme s) {
-		String updateQuery = "update schemes set uniqueid=?, name=?, summary=?, description=?, ministry=?,sector=?,startdate=?,status=?, paymentbanks=?";
+		String updateQuery = "update schemes set uniqueid=?, name=?, summary=?, description=?, ministry=?,sector=?,startdate=?,status=?, paymentbanks=?;";
 		PreparedStatement pstmt;
 		
 		try {
@@ -176,7 +175,6 @@ public class EmployeeDaoImpl implements EmployeeDaoIntf{
 			pstmt.setString(4, s.getDescription());
 			pstmt.setString(5, s.getMinistry());
 			pstmt.setString(6, s.getSector());
-			Date d = (Date) s.getStartDate();
 			pstmt.setDate(7,  (Date) s.getStartDate());
 			pstmt.setString(8, s.getStatus());
 			pstmt.setString(9, s.getPaymentBanks());
@@ -185,6 +183,118 @@ public class EmployeeDaoImpl implements EmployeeDaoIntf{
 			e.printStackTrace();
 		}
 		
+	}
+
+	@Override
+	public void addSchemeCriteria(SchemeCriteria s) {
+		String addQuery = "insert into schemecriteria values(?,?,?,?,?,?,?);";
+		PreparedStatement pstmt;
+		
+		try {
+			pstmt=conn.prepareStatement(addQuery);
+			pstmt.setString(1, s.getUniqueId());
+			pstmt.setString(2, s.getProfession());
+			pstmt.setString(3, s.getIncomeGroup());
+			pstmt.setString(4, s.getGender());
+			pstmt.setString(5, s.getDocuments());
+			pstmt.setInt(6, s.getMinAge());
+			pstmt.setInt(7, s.getMaxAge());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void deleteSchemeCriteria(String id) {
+		String deleteQuery = "delete from schemecriteria where uniqueid="+id+";";
+		
+		try {
+			Statement stmt = conn.createStatement();
+			stmt.executeUpdate(deleteQuery);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public List<SchemeCriteria> displayAllSchemesCriteria() {
+		List<SchemeCriteria> slist = new ArrayList<>();
+		try {
+
+			String str = "select * from schemecriteria ";
+			Statement pst = conn.createStatement();
+			ResultSet rs = pst.executeQuery(str);
+
+//			private String profession,incomeGroup,gender,documents,uniqueId;
+//			private int minAge,maxAge;
+			
+			while (rs.next()) {
+				String uniqueId = rs.getString(1);
+				String profession = rs.getString(2);
+				String incomeGroup = rs.getString(3);
+				String gender = rs.getString(4);
+				String documents = rs.getString(5); 
+				int minAge = rs.getInt(6);
+				int maxAge = rs.getInt(7);
+				slist.add(new SchemeCriteria(uniqueId, profession, incomeGroup, gender, documents, minAge, maxAge));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public SchemeCriteria getSchemeCriteriaById(String id) {
+		SchemeCriteria s=null;
+		String searchQuery = "select * from schemescriteria where uniqueId ="+id;
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(searchQuery);
+			while(rs.next()) {
+				if(id.equals(rs.getString(1))){
+					String uniqueId = rs.getString(1);
+					String profession = rs.getString(2);
+					String incomeGroup = rs.getString(3);
+					String gender = rs.getString(4);
+					String documents = rs.getString(5); 
+					int minAge = rs.getInt(6);
+					int maxAge = rs.getInt(7);
+					s= new SchemeCriteria(uniqueId,profession,incomeGroup,gender,documents,minAge,maxAge);
+					}
+				}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return s;
+	}
+
+	@Override
+	public void editSchemeCriteria(SchemeCriteria s) {
+		String updateQuery = "update schemes set uniqueid=?, profession=?, incomeGroup=?, gender=?, documents=?,minage=?,maxage=?;";
+		PreparedStatement pstmt;
+		
+		try {
+			pstmt=conn.prepareStatement(updateQuery);
+			pstmt.setString(1, s.getUniqueId());
+			pstmt.setString(2,s.getProfession());
+			pstmt.setString(3, s.getIncomeGroup());
+			pstmt.setString(4, s.getGender());
+			pstmt.setString(5, s.getDocuments());
+			pstmt.setInt(6, s.getMinAge());
+			pstmt.setInt(6, s.getMaxAge());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
