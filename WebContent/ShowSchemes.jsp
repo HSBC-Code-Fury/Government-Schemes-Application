@@ -5,7 +5,23 @@
 <head>
 <title>Insert title here</title>
 </head>
+<link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 <body>
+<div class="sidebar">
+		<a href="addScheme.jsp">Add Schemes</a>
+		<hr>
+		<a href="ShowSchemes.jsp" class="active"> View Schemes</a>
+		<hr>
+	</div>
+
+	<div class="topnav">
+		<div class="topnav-left">
+			<a href="Logo">Logo</a>
+		</div>
+
+		<a href="EmployeeHome.jsp">Home</a> 
+
+	</div>
 <%
 if(session.getAttribute("empid")==null) {
 	response.sendRedirect("employeelogin.html");
@@ -39,6 +55,11 @@ session.getAttribute("schemeCriteriaList");%>
 	</c:forEach>
 	
 </table>
-
+<footer>
+		<p>
+			This site is developed by HSBC<br> <a
+				href="mailto:hege@example.com">hsbc.co.in</a>
+		</p>
+	</footer>
 </body>
 </html>
