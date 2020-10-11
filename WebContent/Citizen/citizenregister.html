@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Home page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+
+</head>
+<body>
+
+	
+	
+	
+  <div class="sidebar">
+
+    <a href="citizenregister.html" class="active">Citizen Register</a><hr>
+    <a href="citizenlogin.html"> Citizen Login</a><hr>
+    <a href="employeelogin.html"> Employee Login</a><hr>
+  </div>
+
+      <div class="topnav" >
+        <div class="topnav-left">
+            <a href="Logo" >Logo</a>
+        </div>
+        <a href="Home.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="help.html">Help</a>
+      </div>
+
+
+      <div class="headName">
+        <h2>Registration of Citizen</h2>
+      </div>
+
+
+      <div class="main">
+        <form method="post" action="" class="formClass"  onsubmit="return validateForm()">
+          <label class="labelClass">Full Name:</label><input type="text" name="citFullName" id="citFullName" required><br><br>
+
+          <label class="labelClass">DateOfBirth:</label><input type="date" name="citDob" id="citDob" required> <br><br>
+			
+			
+          <label class="labelClass" >Gender</label>
+              <input type="radio" name="citGender" id="citGender" required>
+              <label for="Male"> Male</label>
+              <input type="radio" name="citGender" id="citGender" required>
+              <label for="Female"> Female</label><br><br>
+
+          <label class="labelClass">Email:</label><input type="email" name="citEmail" id="citEmail" required><br><br>
+
+          <label class="labelClass">PhoneNo:</label><input type="text" name="citPhone" id="citPhone" pattern="\d{10,10}" title="Must contain 10 numbers" required><br><br>
+
+          <label class="labelClass">Address:</label><input type="text" name="citAddress" id="citAddress" required><br><br>
+	
+          <label class="labelClass">Income Group:</label>
+            <select name="citIncomeGroup" id="citIncomeGroup" >
+            <option value="LessThan 250000">LessThan 250000</option>
+            <option value="LessThan 500000">LessThan 500000</option>
+            <option value="LessThan 1000000">LessThan 1000000</option>
+            <option value="MoreThan 1000000">MoreThan 1000000</option>
+          </select><br><br>
+
+          <label class="labelClass">Profession:</label>
+		  <select name="citProfession" id="citProfession" >
+            <option value="Farmer">Farmer</option>
+            <option value="GovtEmployee">GovtEmployee</option>
+            <option value="PrivateSector">PrivateSector</option>
+            <option value="PublicSector">PublicSector</option>
+            <option value="Unemployed">Unemployed</option>
+            <option value="Retired">Retired</option>
+          </select><br><br>
+
+          <label class="labelClass">Aadhar number:</label><input type="text" name="citAadhar" id="citAadhar" pattern="\d{12,12}" title="Must contain 12 numbers" required><br><br>
+          <label class="labelClass">Pan Number:</label><input type="text" name="citPanNumber" id="citPanNumber" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,10}" title="Must contain 10-digit alphanumeric" ><br><br>
+		  <label class="labelClass">UserName:</label><input type="text" name="citUsername" id="citUsername" required><br><br>
+		  <label class="labelClass">Password:</label><input type="password" name="citPassword" id="citPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required> 
+		 
+		  
+		  <div id="message">
+			<h3>Password must contain the following:</h3>
+			<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+			<p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+			<p id="number" class="invalid">A <b>number</b></p>
+			<p id="length" class="invalid">Minimum <b>8 characters</b></p>
+			</div>  
+		  <br><br>
+
+          <label class="labelClass">Confirm Password:</label><input type="password" name="citConfirmPassword" id="citConfirmPassword" required> <br><br>
+          
+		  <div id="message2">
+			<p id="pass_match" class="invalid">Password mismatch</p>
+		  </div>
+		  <br><br>
+		  <p>Add Doucments</p>
+		<label for="myfile" class="labelClass">  Aadhar Card:</label><input type="file" id="AadharCard" name="AadharCard"><br><br>
+		 <label for="myfile" class="labelClass">Pan Card:</label><input type="file" id="PanCard" name="PanCard"><br><br>
+		  <label for="myfile" class="labelClass">VoterId:</label><input type="file" id="VoterId" name="VoterId"><br><br>
+		  <label for="myfile" class="labelClass">Residential Proof:</label><input type="file" id="ResidentialProof" name="ResidentialProof"><br><br><br>
+		  
+		  <input type="submit" class="button1" name="submit" id="submit" > 
+        </form>
+
+			
+
+      </div>
+
+      <footer>
+        <p>This site is developed by HSBC<br>
+        <a href="mailto:hege@example.com">hsbc.co.in</a></p>
+      </footer> 
+	  <script>
+var myInput = document.getElementById("citPassword");
+var confirmInput = document.getElementById("citConfirmPassword");
+var aadharNo=document.getElementById("citAadhar");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+confirmInput.onfocus = function() {
+  document.getElementById("message2").style.display = "block";
+}
+
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+confirmInput.onblur = function() {
+  document.getElementById("message2").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+
+confirmInput.onkeyup = function(){
+
+	if(confirmInput.value==myInput.value)
+	{
+	document.getElementById("pass_match").innerHTML="Password match";
+	 pass_match.classList.remove("invalid");
+    pass_match.classList.add("valid");
+	}
+	else
+	{
+	document.getElementById("pass_match").innerHTML="Password mismatch";
+	pass_match.classList.remove("valid");
+    pass_match.classList.add("invalid");
+	}
+}
+
+function validateForm()
+			{
+			var myInput = document.getElementById("citPassword");
+			var confirmInput = document.getElementById("citConfirmPassword");
+
+			if((document.getElementById("citPassword").value)!=(document.getElementById("citConfirmPassword").value))
+			alert("PasswordMismatch");	
+				
+			}
+</script>
+	  
+
+</body>
+
+</html> 
