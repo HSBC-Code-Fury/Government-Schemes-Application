@@ -1,0 +1,47 @@
+1. Home Page: EmployeeID & CitizenID should not be used as addressing fields in Citizen and employee login. 
+   Username/userID shuld be used.
+2. HTML titles should not be according to programming conventions, instead they should be regular.
+  For ex. DateOfBirth should be Date of Birth, userName should be Username. 
+3. Colour asthetics are Dark. Light colours should be used.
+4. Bank Details are not taken from the Citizen. (atleast bank account number should be taken) 
+5. If possible, display the list of all schemes directly o the citizen home page and instead of all schemes button 
+   on the left, create my approved applications button where schemes with their status will be displayed, and replace my schemes with my applied schemes.
+   Details of this are provided in web-app file. 
+6. There should not be any employee home page. Directly transfer him to add scheme page. 
+    Employee is supposed to be aware of all the notices and schemes before hand and plus he is an employee of the government.
+7.
+
+
+
+
+
+
+
+Help -
+FAQs (if each question with a drop down answer can be done, would look good. if tedious then put the file directly)
+Registration Process (to be picked from the Web-app Info file, there is a separate section for registration process) 
+
+Contact-
+Toll free number- {any number} 
+{portal name}@gov.co.in
+
+Apply Scheme HTML-
+Citizen home page content:-
+A notice regarding the start date and end date of the active schemes. 
+{ Notice:
+  We are now accepting application for {Scheme name}.
+  Pleasse not the last date of application for {scheme name} is {last date} 
+}
+
+Guidelines for filling online application:
+{
+ To be picked from web-app file, section 2
+}
+
+My scheme & all schemes:
+{ 
+TO be picked from web-app file, section 7 & 8
+}
+
+
+
