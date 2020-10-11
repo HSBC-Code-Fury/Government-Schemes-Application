@@ -28,6 +28,7 @@ package com.hsbc.governmentschemes.dao;
 import java.util.List;
 
 import com.hsbc.governmentschemes.model.Scheme;
+import com.hsbc.governmentschemes.model.SchemeCriteria;
 
 public interface EmployeeDaoIntf {
 	int validateEmployeeDetails(String username, String password);
@@ -36,4 +37,9 @@ public interface EmployeeDaoIntf {
 	List<Scheme> displayAllSchemes();
 	Scheme getSchemeById(String id);
 	void editScheme(Scheme s);
+	void addSchemeCriteria(SchemeCriteria s);
+	void deleteSchemeCriteria(String id);
+	List<SchemeCriteria> displayAllSchemesCriteria();
+	SchemeCriteria getSchemeCriteriaById(String id);
+	void editSchemeCriteria(SchemeCriteria s);
 }
