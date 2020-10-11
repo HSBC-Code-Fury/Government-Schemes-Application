@@ -80,6 +80,14 @@
 .formClass{
     margin-left: 250px;
 }
+.contentClass{
+    margin-left: 250px;
+	font-size:20px;
+}
+.labelClass2{
+	float: left;
+    width: 40px;
+}
 
 .button1{
     border: none;
