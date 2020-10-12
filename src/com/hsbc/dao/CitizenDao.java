@@ -1,11 +1,14 @@
-package com.hsbc;
+package com.hsbc.dao;
+
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 
 import com.hsbc.db.DBConnection;
+import com.mysql.cj.protocol.Resultset;
 
 public class CitizenDao {
 	
@@ -14,17 +17,15 @@ public class CitizenDao {
 	public CitizenDao() {
 		conn = DBConnection.getConnection();
 	}
-	
-	
-	//Adds a citizen into the DB using Citizen Object
+
 	public Boolean addCitizen(Citizen c, String password) {
-		
-		int flag = 0, flag1 = 1;
-		try{   
+
+		int flag = 0, flag1 = 0;
+		try {
 			conn.setAutoCommit(false);
-			PreparedStatement ps = conn.prepareStatement("insert into citizen values(?,?,?,?,?,?,?,?,?,?,?)");  
-			ps.setString(1,c.getUniqueId());  
-			ps.setString(2,c.getName());  
+			PreparedStatement ps = conn.prepareStatement("insert into citizen values(?,?,?,?,?,?,?,?,?,?,?)");
+			ps.setString(1, c.getUniqueId());
+			ps.setString(2, c.getName());
 			ps.setString(3, c.getDob());
 			ps.setString(4, c.getGender());
 			ps.setString(5, c.getEmail());
@@ -44,17 +45,32 @@ public class CitizenDao {
 			conn.commit();
 			if(flag == 1 && flag1 == 1)
 				return true;
-		}catch(SQLException e){
-			e.printStackTrace();
-		}  
-		catch(Exception e) {
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return false;
+	}
+	
+	public boolean validateCitizen(String citizenId, String password) {
+		
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement("select * from citizenLogin where uniqueId=? and password=?");
+			ps.setString(1, citizenId);
+			ps.setString(2, password);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				if(rs.getString(1).equals(citizenId) && rs.getString(2).equals(password)){
+					return true;
+				}
+				else
+					return false;
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
-	
-	public Boolean validateCitizen() {
-		return null;
-	}
-	
 }

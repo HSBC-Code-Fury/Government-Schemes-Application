@@ -8,28 +8,36 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class ValidateCitizenServlet extends HttpServlet{
+import com.hsbc.dao.CitizenDao;
+
+public class ValidateCitizenServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
-		
-		String username = req.getParameter("uname");
+
+		String citizenId = req.getParameter("uname");
 		String password = req.getParameter("pass");
-		
+
 		CitizenDao dao = new CitizenDao();
-		boolean flag = dao.validateCitizen(username,password);
-		
-		if(flag == true) {
-			RequestDispatcher rd = req.getRequestDispatcher("nextpage.html");
-			rd.forward(req, resp);
+
+		boolean flag = dao.validateCitizen(citizenId, password);
+
+		if (flag == true) { 
+			HttpSession session = req.getSession();
+			session.setAttribute("citizenId", citizenId);
+			RequestDispatcher dispatcher = req.getRequestDispatcher("viewallschemes.jsp");
+			dispatcher.forward(req, resp);
 		}
-		else {
-			RequestDispatcher rd = req.getRequestDispatcher("CitizenLogin.html");
-			rd.forward(req, resp);
+		else { 
+			RequestDispatcher rd = req.getRequestDispatcher("citizenlogin.html");
+			rd.forward(req, resp); 
 		}
+
+
 	}
-	
+
 }

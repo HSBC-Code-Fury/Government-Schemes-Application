@@ -1,4 +1,6 @@
-package com.hsbc;
+package com.hsbc.dao;
+
+import java.util.Date;
 
 public class Citizen {
 	
@@ -14,19 +16,19 @@ public class Citizen {
 	String aadhar;
 	String pan;
 	
-	public Citizen(String uniqueId, String name, String dateOfBirth, String gender, String email, String phone, String address,
-			String incomeGroup, String profession, String aadhar, String pan) {
+	public Citizen(String uniqueId, String name, String dob, String gender, String email, String phoneNumber, String address,
+			String incomeGroup, String profession, String aadharId, String pan) {
 		super();
 		this.uniqueId = uniqueId;
 		this.name = name;
-		this.dob = dateOfBirth;
+		this.dob = dob;
 		this.gender = gender;
 		this.email = email;
-		this.phone = phone;
+		this.phone = phoneNumber;
 		this.address = address;
 		this.incomeGroup = incomeGroup;
 		this.profession = profession;
-		this.aadhar = aadhar;
+		this.aadhar = aadharId;
 		this.pan = pan;
 	}
 	
