@@ -5,38 +5,47 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<display-name>HSBCWebApp</display-name>
-
 	<servlet>
-		<servlet-name>citizenRegister</servlet-name>
-		<servlet-class>com.hsbc.AddCitizenServlet</servlet-class>
+		<servlet-name>AddCitizen</servlet-name>
+		<servlet-class>com.hsbc.controller.AddCitizenServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>citizenRegister</servlet-name>
-		<url-pattern>/citizenLogin</url-pattern>
+		<servlet-name>AddCitizen</servlet-name>
+		<url-pattern>/addcitizen</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
-		<servlet-name>login</servlet-name>
-		<servlet-class>com.hsbc.Servlets.LoginServlet</servlet-class>
+		<servlet-name>ApplyScheme</servlet-name>
+		<servlet-class>com.hsbc.controller.ApplyCitizenServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>login</servlet-name>
-		<url-pattern>/Login</url-pattern>
+		<servlet-name>ApplyScheme</servlet-name>
+		<url-pattern>/applyscheme</url-pattern>
 	</servlet-mapping>
-
+		<servlet>
+		<servlet-name>Apply</servlet-name>
+		<servlet-class>com.hsbc.controller.ApplySchemeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Apply</servlet-name>
+		<url-pattern>/apply</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ValidateCitizen</servlet-name>
+		<servlet-class>com.hsbc.controller.ValidateCitizenServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ValidateCitizen</servlet-name>
+		<url-pattern>/validatecitizen</url-pattern>
+	</servlet-mapping>
 	<servlet>
 		<servlet-name>ordername</servlet-name>
-		<servlet-class>com.hsbc.Servlets.CitizenController</servlet-class>
+		<servlet-class>com.hsbc.controller.CitizenController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ordername</servlet-name>
 		<url-pattern>/Control</url-pattern>
 	</servlet-mapping>
-
 	<welcome-file-list>
-
 		<welcome-file>index.jsp</welcome-file>
-
 	</welcome-file-list>
-
 </web-app>

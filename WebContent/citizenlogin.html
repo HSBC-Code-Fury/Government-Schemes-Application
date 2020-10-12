@@ -6,38 +6,48 @@
     <title>Home page</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-  
+
 </head>
 <body style="height: 100%;">
- 
+
   <div class="sidebar">
 
-    <a href="citizenregister1.html" ><i class="fa fa-fw fa-home"></i> Citizen Register</a><hr>
-    <a href="citizenlogin.html"><i class="fa fa-fw fa-wrench"></i> Citizen Login</a><hr>
-    <a href="employeelogin.html"><i class="fa fa-fw fa-user"></i> Employee Login</a><hr>
+    <a href="citizenregister1.html" > Citizen Register</a><hr>
+    <a href="citizenlogin.html" class="active" > Citizen Login</a><hr>
+    <a href="employeelogin.html"> Employee Login</a><hr>
   </div>
 
       <div class="topnav" >
         <div class="topnav-left">
             <a href="Logo" >Logo</a>
         </div>
-        <a class="active" href="home.html">Home</a>
+        <a href="home.html">Home</a>
         <a href="contact.html">Contact</a>
         <a href="help.html">Help</a>
       </div>
-   
-   
+
+
       <div class="headName">
         <h2>Welcome to Govt schemes </h2>
       </div>
 
- 
+
       <div class="main">
-     
-      <p class="formClass"> Content</p>
-          
-      
-      </div>
+
+        <form method="post" action="validatecitizen" class="formClass">
+
+            <label class="labelClass">CitizenId :</label> <input type="text" id="uname" name="uname" required><br><br>
+            <label class="labelClass" >Password :</label><input type="password" id="pass" name="pass"  required> <br><br>
+
+            <input class="button1" type="submit" value="Login">
+			
+      </form>
+	  
+	  
+	</div>
+
+			
+	
 
       <footer>
         <p>This site is developed by HSBC<br>
@@ -46,4 +56,4 @@
 
 </body>
 
-</html>
+</html> 

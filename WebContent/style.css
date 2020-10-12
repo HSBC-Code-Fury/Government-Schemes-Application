@@ -118,13 +118,6 @@
     height:100%;
 
   }
- .helpDiv{
- background-color: lightgrey;
-    margin-top:auto; /* Same as the width of the sidenav */
-    padding: 20px 20px;
-    height:auto;
- 
- }
 footer {
         text-align: center;
         padding: 3px;

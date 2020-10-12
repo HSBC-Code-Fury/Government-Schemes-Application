@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Home page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+<body>
+<div class="sidebar">
+  <a href="addscheme.html" class="active">Add Schemes</a><hr>
+  <a href="viewallschemes.html"> View Schemes</a><hr>
+</div> 
+    
+    <div class="topnav" >
+        <div class="topnav-left">
+            <a href="Logo" >Logo</a>
+        </div>
+        <a href="employeehome.html">Home</a>
+        <a class="redirect" href="home.html">Logout</a>
+  
+   
+      <div class="headName" style="margin-top: 46px;">
+        <h2>Add Scheme</h2>
+    </div>
+ 
+      <div class="main">
+     
+        <form method="post" action="" class="formClass">
+         
+            
+            <label class="labelClass">Name:</label> <input type="text" name="addName" id="name"><br><br>
+            <label class="labelClass">Summary :</label><input type="text" name="addSummary" id="summary"><br><br>
+            <label class="labelClass">Description :</label><textarea id="desc" name="addDesc" rows="4" cols="50"></textarea><br><br>
+            <label class="labelClass">Image :</label><input type="file" id="img" name="img" accept="image/*"><br><br>
+            <label class="labelClass">Ministry :</label>
+            <select name="addMinistry" id="ministry" class="labelClass">
+                <option value="finance">Ministry of Finance</option>
+                <option value="education">Ministry of Education</option>
+                <option value="panchayati">Ministry of Panchayati Raj</option>
+                <option value="tribal">Ministry of Tribal Affairs</option>
+                <option value="wc">Ministry of Women and Child Development</option>
+              </select><br><br>
+            <label class="labelClass">Sector :</label>
+            <select name="addSector" id="sector" placeholder="Enter Sector Here">
+            <option value="pension">Pension</option>
+                <option value="highEdu">University and Higher Education; Minorities Education</option>
+                <option value="techEdu">Technical Education</option>
+                <option value="finService">Financial Services</option>
+                <option value="revenue">Revenue</option>
+                <option value="passmanage">Investment and Public Asset Management</option>
+                <option value="ePanchayat">E-PANCHAYAT</option>
+                <option value="ncst">National Commission for Scheduled Tribes</option>
+                <option value="hstfdc">National Scheduled Tribes Finance and Development Corporation </option>
+                <option value="trifed">Tribal Co-operative Marketing Federation of India</option>
+                <option value="nipccd">National Institute of Public Cooperation and Child Development</option>
+                <option value="ncw">National Commission for Women </option>
+                <option value="ncpcr">National Commission for Protection of Child Rights </option>
+              </select><br><br>
+            
+            
+            <label class="labelClass">Start Date :</label><input type="date" id="start" name="startDate"><br><br>
+            <label class="labelClass">Eligibility Criteria :</label>
+            <input type="text" name="minAge" id="minAge" placeholder="Enter min age">
+            <input type="text" name="maxAge" id="maxAge" placeholder="Enter max age">
+            <select name="addProf" id="prof">
+                <option value="farmer">Farmer</option>
+                <option value="govtEmp">Govt Employee</option>
+                <option value="priSec">Private Sector</option>
+                <option value="pubSec">Public Sector</option>
+                <option value="unEmp">Unemployed</option>
+                <option value="retd">Retired</option>
+              </select>
+            
+            <select name="incGrp" id="inc">
+                <option value="bpl">BPL</option>
+                <option value="lower">Lower</option>
+                <option value="middle">Middle</option>
+              </select>
+              
+              <select name="gender" id="gend">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            <br><br><br>
+            <label class="labelClass">Documents Required :</label><br>
+            <input type="checkbox" id="aadhar" name="aadharCard" value="aadhar"><label> Aadhar Card</label><br>
+            <input type="checkbox" id="pan" name="panCard" value="pan" class="checkB"><label >Pan Card</label><br>
+            <input type="checkbox" id="voter" name="voterId" value="voter" class="checkB">Voter Id<label></label><br>
+            <input type="checkbox" id="resd" name="resdProof" value="resd" class="checkB"><label>Residential  Proof</label><br>
+             <br><br>
+            <label class="labelClass">Payments Bank :</label>
+            <select name="payBank" id="bank">
+                <option value="sbi">State Bank of India</option>
+                <option value="cbi">Central Bank of India</option>
+                <option value="ubi">Union Bank of India</option>
+              </select><br><br><br><br>
+            
+            <input class="button1" type="submit" value="Add Scheme">
+            </form>
+            
+      </div>
+
+      <footer>
+        <p>Footer text<br>
+        <a href="mailto:hege@example.com">hege@example.com</a></p>
+      </footer>
+
+      <script>
+        window.onscroll = function() {myFunction()};
+        
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+        </script>
+</body>
+</html>
